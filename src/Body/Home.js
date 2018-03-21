@@ -9,7 +9,7 @@ const Home = () => {
             Welcome!
           </Typography>
 	      <Typography variant="subheading" color="inherit" align="left" style={{padding: 20}}>
-            Currently only face detection and color detection are available. Please choose the menu on the left bar.
+            Currently only face, color and food detections are available. Please choose the menu on the left bar.
           </Typography>          
 	      </Paper>
 		</div>
