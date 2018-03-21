@@ -1,0 +1,15 @@
+.chart-basic {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: center;
+	max-width:750px;
+}
+
+
+#gender div:first-child > svg.recharts-surface:first-child {
+	padding-top: 100px !important;
+	margin-top: -80px !important;
+}
