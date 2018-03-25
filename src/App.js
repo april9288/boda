@@ -27,7 +27,7 @@ class App extends Component {
 
   onNavClick = (route) => {
     this.setState({route});
-    this.setState({submit_url: '', result: ''});
+    this.setState({input_url:'', submit_url: '', result: ''});
   }
 
   rand = () => {
@@ -58,7 +58,7 @@ class App extends Component {
   }
 
   clear = (e) => {
-    console.log(e);
+    console.log("clear clicked : ", e);
     this.setState({input_url:'', submit_url: '', result: ''});
   }
 
@@ -96,9 +96,10 @@ class App extends Component {
                   route = {this.state.route}
                   image = {this.state.submit_url} 
                   search = {this.search} 
+                  text = {this.state.input_url}
                   click = {this.click}
                   result = {this.state.result}
-                  clear = {this.clear.bind(this)}
+                  clear = {this.clear}
                    />
             </Grid>
           </Grid>

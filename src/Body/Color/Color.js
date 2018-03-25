@@ -12,7 +12,7 @@ const change_bg = (color="white") => {
 }
 
 
-const Color = ({search, click, image, result}) => {
+const Color = ({search, text, click, image, result, clear}) => {
 	
     let result_color = '';
     if (result.length !== 0 && result.outputs[0].data.colors[0].raw_hex) {
@@ -30,12 +30,15 @@ const Color = ({search, click, image, result}) => {
 	      <Paper style = {{ padding: 20, marginTop: 10, marginBottom: 10}}>
 	       <FormControl >
 	          <InputLabel>Url</InputLabel>
-	          <Input style={{minWidth: 450}} onChange = {search}/>
+	          <Input style={{minWidth: 450}} onChange = {search} value={text}/>
 	          <FormHelperText>Insert your photo's url here</FormHelperText>
 	        </FormControl>    
 	        <Button style={{margin: 10}}variant="raised" color="primary" onClick={()=>click("color")}>
 		       Submit
 		    </Button> 
+		  <Button style={{margin: 10}} variant="raised" color="secondary" onClick={clear}>
+           Clear
+          </Button> 
 	      </Paper>
 
 	      <ImageColor image = {image}/>  

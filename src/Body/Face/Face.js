@@ -21,7 +21,7 @@ const calculateFaceLocation = (data) => {
             culture: value.data.face.multicultural_appearance.concepts}));
   }
 
-const Face = ({search, click, image, result, clear}) => {
+const Face = ({search, text, click, image, result, clear}) => {
   let result_face = [];
   if (result.length !== 0 && result.outputs[0].data.regions) {
     result_face = calculateFaceLocation(result);
@@ -37,7 +37,7 @@ const Face = ({search, click, image, result, clear}) => {
 	      <Paper style={{padding: 20, marginTop: 10, marginBottom: 10}}>
 	       <FormControl>
 	          <InputLabel>Url</InputLabel>
-	          <Input style={{minWidth: 450}} onChange={search}/>
+	          <Input style={{minWidth: 450}} onChange={search} value={text}/>
 	          <FormHelperText>Insert your photo's url here</FormHelperText>
 	       </FormControl>    
 	        <Button style={{margin: 10}} variant="raised" color="primary" onClick={()=>click("demo")}>

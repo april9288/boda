@@ -7,7 +7,7 @@ import Button from 'material-ui/Button';
 import ImageFood from './ImageFood';
 import ChartFood from './ChartFood';
 
-const Food = ({search, click, image, result}) => {
+const Food = ({search, text, click, image, result, clear}) => {
 
 	let food = [];
     if (result.length !== 0 && result.outputs[0].data.concepts) {
@@ -25,12 +25,15 @@ const Food = ({search, click, image, result}) => {
 	      <Paper style = {{ padding: 20, marginTop: 10, marginBottom: 10}}>
 	       <FormControl >
 	          <InputLabel>Url</InputLabel>
-	          <Input style={{minWidth: 450}} onChange = {search}/>
+	          <Input style={{minWidth: 450}} onChange = {search} value={text}/>
 	          <FormHelperText>Insert your photo's url here</FormHelperText>
 	        </FormControl>    
 	        <Button style={{margin: 10}}variant="raised" color="primary" onClick={()=>click("food")}>
 		       Submit
 		    </Button> 
+		  <Button style={{margin: 10}} variant="raised" color="secondary" onClick={clear}>
+           Clear
+          </Button> 
 	      </Paper>
 
 	      <ImageFood image = {image}/> 
