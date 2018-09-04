@@ -10,7 +10,7 @@ import Modal from 'material-ui/Modal';
 import Typography from 'material-ui/Typography';
 
 const app = new Clarifai.App({
- apiKey: 'f83c70bced734eb0ab4f25d3dc639211'
+ apiKey: "e805b9bb271642149d5bdffcae8465d7"
 });
 
 class App extends Component {
