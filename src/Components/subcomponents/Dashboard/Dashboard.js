@@ -1,4 +1,5 @@
 import React from 'react';
+import DashboardResult from './DashboardResult';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -11,19 +12,13 @@ import Hidden from '@material-ui/core/Hidden';
 import Divider from '@material-ui/core/Divider';
 import MenuIcon from '@material-ui/icons/Menu';
 
-import MainMenuItems from '../router/menuRouter';
-import {SubMenuItems} from '../router/submenuRouter';
-
-import { connect } from 'react-redux';
+import MainMenuItems from '../../router/menuRouter';
+import {SubMenuItems} from '../../router/submenuRouter';
 
 const drawerWidth = 240;
 const styles = theme => ({
   root: {
-    flexGrow: 1,
     height: "100vh",
-    zIndex: 1,
-    overflow: 'hidden',
-    position: 'relative',
     display: 'flex',
     width: '100%',
   },
@@ -39,7 +34,6 @@ const styles = theme => ({
       display: 'none',
     },
   },
-  toolbar: theme.mixins.toolbar,
   drawerPaper: {
     background: "rgb(168, 84, 144)",
     height: "100vh",
@@ -49,9 +43,18 @@ const styles = theme => ({
     },
   },
   content: {
+    overflowY: "scroll",
+    overflowX: "hidden",
+    marginTop: "60px!important",
+    [theme.breakpoints.down('sm')]: {
+      marginTop: "56px!important",
+    },
+    width:"100%",
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing.unit * 3,
+    display: "grid",
+    justifyContent: "center",
   },
   title: {
     color: "white",
@@ -82,7 +85,7 @@ render(){
 
 
 	return (
-		<div>
+		<div className={classes.root}>
 
 		    <Hidden mdUp>
           <Drawer
@@ -116,9 +119,9 @@ render(){
 	          </Toolbar>
 	        </AppBar>
 
-	    <main className={classes.content}>
-        <div className={classes.toolbar} />
-      </main>
+    	    <main className={classes.content}>
+            <DashboardResult />
+          </main>
 
 		</div>
 	);
@@ -130,5 +133,4 @@ Dashboard.propTypes = {
   theme: PropTypes.object.isRequired,
 };
 
-const styledComponent = withStyles(styles, { withTheme: true })(Dashboard);
-export default connect()(styledComponent);
+export default withStyles(styles, { withTheme: true })(Dashboard)

@@ -16,12 +16,12 @@ import MainMenuItems from './router/menuRouter';
 import {SubMenuItems} from './router/submenuRouter';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Dashboard from './subcomponents/Dashboard';
-import Face from './subcomponents/Face';
-import Color from './subcomponents/Color';
-import Food from './subcomponents/Food';
+import Dashboard from './subcomponents/Dashboard/Dashboard';
+import Face from './subcomponents/Face/Face';
+import Color from './subcomponents/Color/Color';
+import Food from './subcomponents/Food/Food';
 import NotFound from './subcomponents/NotFound';
-import Footer from './Footer';
+import Footer from './subcomponents/Footer';
 
 const drawerWidth = 240;
 

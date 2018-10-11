@@ -1,7 +1,8 @@
 import React from 'react';
+import FaceSamples from './FaceSamples';
 import ChartFace from './ChartFace';
 import FaceResult from './FaceResult';
-import Progressbar from './Progressbar';
+import Progressbar from '../Progressbar';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -17,11 +18,11 @@ import InputBase from '@material-ui/core/InputBase';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import SearchIcon from '@material-ui/icons/Search';
 
-import MainMenuItems from '../router/menuRouter';
-import {SubMenuItems} from '../router/submenuRouter';
+import MainMenuItems from '../../router/menuRouter';
+import {SubMenuItems} from '../../router/submenuRouter';
 
 import { connect } from 'react-redux';
-import { searchFieldAction, requestDetectionAction } from '../redux/actions';
+import { searchFieldAction, requestDetectionAction } from '../../redux/actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -45,8 +46,9 @@ const drawerWidth = 240;
 const styles = theme => ({
   root: {
     height: "100vh",
-    display: 'flex',
     width: '100%',
+    background: "white",
+    overflowY: "auto",
   },
   appBar: {
     position: 'absolute',
@@ -75,13 +77,19 @@ const styles = theme => ({
     },
     width:"100%",
     flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
     padding: theme.spacing.unit * 3,
+    paddingTop: 0,
     justifyContent: "center",
-    display:"inline-grid",
+    display:"flex",
     flexWrap: "wrap",
     overflowX: "hidden",
     overflowY: "auto",
+  },
+  chartContent : {
+    display: "flex",
+    justifyContent: "center",
+    flexWrap: "wrap",
+    flexDirection: "column"
   },
   title: {
     color: "white",
@@ -258,16 +266,20 @@ render(){
           </AppBar>
 
         <main className={classes.content}>
+
+              <FaceSamples />
               {
                 (error || internalError)
                 ? <h1>Error! Check the format of the photo</h1>
                 : (searchField)
                 && <FaceResult img={searchField} face={faceResultsForCharts} />
               }
+              <div className={classes.chartContent}>
               {
                 faceResultsForCharts
                 && faceResultsForCharts.map((val,i) => <ChartFace key={val.topRow} num={i} age={val.age} gender={val.gender} culture={val.culture}/>)
               }
+              </div>
         </main>
 
     </div>

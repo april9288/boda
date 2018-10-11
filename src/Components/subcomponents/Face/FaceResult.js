@@ -1,5 +1,4 @@
 import React from 'react';
-import './FaceResult.css';
 import Paper from '@material-ui/core/Paper';
 
 const faceImageDiv = { 
@@ -10,11 +9,18 @@ const faceImageDiv = {
   height: "fit-content"
 }
 
+const faceImageResultBigDiv = {
+  width: "100%",
+  display: "flex",
+  justifyContent: "center"
+
+}
 
 const FaceResult = ({ classes, img, face }) => {
 
   if (img && face) {
     return (
+    <div style={faceImageResultBigDiv}>
       <Paper style = {faceImageDiv} elevation={1}>
       <div className='bigger-box'>
         <img id = 'inputimage' alt='' src={img} width='325' height='auto'/>
@@ -30,6 +36,7 @@ const FaceResult = ({ classes, img, face }) => {
               }
       </div>
       </Paper>
+    </div>
 
     );
   }

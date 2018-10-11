@@ -1,6 +1,7 @@
 import React from 'react';
+import FoodSamples from './FoodSamples';
 import FoodResult from './FoodResult';
-import Progressbar from './Progressbar';
+import Progressbar from '../Progressbar';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -16,11 +17,11 @@ import InputBase from '@material-ui/core/InputBase';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import SearchIcon from '@material-ui/icons/Search';
 
-import MainMenuItems from '../router/menuRouter';
-import {SubMenuItems} from '../router/submenuRouter';
+import MainMenuItems from '../../router/menuRouter';
+import {SubMenuItems} from '../../router/submenuRouter';
 
 import { connect } from 'react-redux';
-import { searchFieldAction, requestDetectionAction } from '../redux/actions';
+import { searchFieldAction, requestDetectionAction } from '../../redux/actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -44,8 +45,10 @@ const drawerWidth = 240;
 const styles = theme => ({
   root: {
     height: "100vh",
-    display: 'flex',
     width: '100%',
+    background: "white",
+    overflowY: "auto",
+    overflowX: "hidden"
   },
   appBar: {
     position: 'absolute',
@@ -74,10 +77,10 @@ const styles = theme => ({
     },
     width:"100%",
     flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
     padding: theme.spacing.unit * 3,
+    paddingTop: 0,
     justifyContent: "center",
-    display:"inline-grid",
+    display:"flex",
     flexWrap: "wrap",
     overflowX: "hidden",
     overflowY: "auto",
@@ -242,6 +245,9 @@ render(){
           </AppBar>
 
         <main className={classes.content}>
+
+              <FoodSamples />
+              
               {
                 (error || internalError)
                 ? <h1>Error! Check the format of the photo</h1>

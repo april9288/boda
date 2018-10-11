@@ -1,6 +1,5 @@
 import React from 'react';
 import Paper from '@material-ui/core/Paper';
-import './FaceResult.css';
 
 const colorImageDiv = { 
   padding: 20, 
@@ -10,10 +9,17 @@ const colorImageDiv = {
   height: "fit-content"
 }
 
+const fameImageResultBigDiv = {
+  // width: "100%",
+  // display: "flex",
+  // justifyContent: "center"
+
+}
+
 const ColorResult = ({ img, color }) => {
   return (
 
-    <div>
+    <div style={fameImageResultBigDiv}>
       <Paper style = {colorImageDiv} elevation={1}>
         <img alt='color' src={img} width='325' height='auto'/>
       </Paper>

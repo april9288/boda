@@ -14,7 +14,6 @@
 	transform: scale(1.1);
 }
 
-
 .ColorSection{
 	width: 100%;
 	display: flex;
@@ -22,7 +21,13 @@
 	align-items: center;
 }
 
-/*side main menu */
+
+
+/*************************************************/
+/*************************************************/
+/****************router>menuRouter****************/
+/*************************************************/
+/*************************************************/
 .firstMenu{
 	background-color: rgb(168, 84, 144)!important;
 }
@@ -37,3 +42,49 @@
 }
 
 
+
+/*************************************************/
+/*************************************************/
+/***************sub components css****************/
+/*************************************************/
+/*************************************************/
+.bounding-box {
+    position: absolute;
+    box-shadow: 0 0 0 3px #149df2 inset;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.bounding-box:hover {
+    position: absolute;
+    box-shadow: 0 0 0 3px #149df2 inset;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+    background-color: rgba(51, 153, 255,0.3)
+}
+
+
+.bigger-box {
+	position: relative;
+	display: inline-block;
+	width: 325px;
+	text-align: center;
+	background: rgba(100,100,180,0.3);
+}
+
+.div-center {
+	text-align: center;
+	margin: auto;
+}
+
+#box_number {
+	margin: -40%;
+    text-align: right;
+    padding-left: 110%;
+    color: deeppink;
+    font-size: 2rem;
+}

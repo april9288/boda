@@ -1,6 +1,7 @@
 import React from 'react';
+import ColorSamples from './ColorSamples';
 import ColorResult from './ColorResult';
-import Progressbar from './Progressbar';
+import Progressbar from '../Progressbar';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -15,11 +16,11 @@ import MenuIcon from '@material-ui/icons/Menu';
 import InputBase from '@material-ui/core/InputBase';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import SearchIcon from '@material-ui/icons/Search';
-import MainMenuItems from '../router/menuRouter';
-import {SubMenuItems} from '../router/submenuRouter';
+import MainMenuItems from '../../router/menuRouter';
+import {SubMenuItems} from '../../router/submenuRouter';
 
 import { connect } from 'react-redux';
-import { searchFieldAction, requestDetectionAction } from '../redux/actions';
+import { searchFieldAction, requestDetectionAction } from '../../redux/actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -43,8 +44,10 @@ const drawerWidth = 240;
 const styles = theme => ({
   root: {
     height: "100vh",
-    display: 'flex',
     width: '100%',
+    background: "white",
+    overflowY: "auto",
+    overflowX: "hidden"
   },
   appBar: {
     position: 'absolute',
@@ -72,11 +75,15 @@ const styles = theme => ({
       marginTop: "56px!important",
     },
     width:"100%",
+    height:"100vh",
     flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
     padding: theme.spacing.unit * 3,
-    display: "grid",
+    paddingTop: 0,
     justifyContent: "center",
+    display:"flex",
+    flexWrap: "wrap",
+    overflowX: "hidden",
+    overflowY: "auto",
   },
   title: {
     color: "white",
@@ -179,7 +186,7 @@ render(){
 	return (
 		<div className={classes.root}>
 
-		<Hidden mdUp>
+		    <Hidden mdUp>
           <Drawer
             variant="temporary"
             open={this.state.mobileOpen}
@@ -240,6 +247,9 @@ render(){
 	        </AppBar>
 
 	      <main className={classes.content} id="colorBody">
+
+              <ColorSamples />
+
               {
                 (error || internalError)
                 ? <h1>Error! Check the format of the photo</h1>
