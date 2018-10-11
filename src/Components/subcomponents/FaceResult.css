@@ -21,7 +21,7 @@
 .bigger-box {
 	position: relative;
 	display: inline-block;
-	width: 450px;
+	width: 325px;
 	text-align: center;
 	background: rgba(100,100,180,0.3);
 }
@@ -32,9 +32,9 @@
 }
 
 #box_number {
-	margin: -30%;
+	margin: -40%;
     text-align: right;
-    padding-left: 90%;
-    color: #149df2;
+    padding-left: 110%;
+    color: deeppink;
     font-size: 2rem;
 }

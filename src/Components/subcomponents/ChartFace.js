@@ -14,33 +14,18 @@ import {RadarChart,
 		CartesianGrid,
 		XAxis,
 		YAxis,
-		Tooltip} from 'recharts';
+		Tooltip,
+		ResponsiveContainer} from 'recharts';
 
 const ChartFace = ({num, age, gender, culture}) => {
-	// 
-	// console.log("data : " , gender);
+
 
 	let dataSheet_gender = [
 	{name : gender[0].name, probability: gender[0].value},
 	{name : gender[1].name, probability: gender[1].value}
 	];
 
-	// let dataSheet_culture = [
-	// {name: 'white', probability: 0.83853533},
-	// {name: "hispanic, latino, or spanish origin", probability: 0.328322961},
-	// {name: "asian", probability: 0.2008561395},
-	// {name: "american indian or alaska native", probability: 0.10904},
-	// {name: "middle eastern or north african", probability: 0.108110504},
-	// {name: "black or african american", probability: 0.10712504}
-	// ];
-
-	// let dataSheet_gender = [
-	// {name : 'feminine', probability: 0.78},
-	// {name : 'masculine', probability: 0.22}
-	// ];
-
 	const COLORS = ['#EC407A', '#2979FF'];
-
 	let dataSheet_culture = [
 	{name: culture[0].name, probability: culture[0].value},
 	{name: culture[1].name, probability: culture[1].value+0.05},
@@ -59,26 +44,24 @@ const ChartFace = ({num, age, gender, culture}) => {
 	{name: age[5].name, age: age[5].value},
 	];
 
-	// let dataSheet_age = [
-	// {name: "age : 16", age: 0.6248909},
-	// {name: "age : 17", age: 0.59915006},
-	// {name: "age : 18", age: 0.41858202}
-	// ];
-
 	return (
-		<div>
-		<h1 style={{textAlign: "left"}}># face {num+1}</h1>
+		<section style={{width: 325}}>
+
+		<h1 style={{textAlign: "center"}}># face {num+1}</h1>
 		<div className = "chart-basic">
+		<ResponsiveContainer width="90%" height={250} className = "responsiveContainer">
 		<RadarChart outerRadius={90} width={730} height={250} data={dataSheet_culture}>
 	      <PolarGrid />
 	      <PolarAngleAxis dataKey="name" />
 	      <PolarRadiusAxis angle={30}/>
 	      <Radar name="Ethnicity" dataKey="probability" stroke="#2979FF" fill="#2979FF" fillOpacity={0.6} />
 	    </RadarChart>
+	    </ResponsiveContainer>
 		</div>
 
 		<div id = "gender" className = "chart-basic">
-	    <PieChart style = {{ paddingTop: 80 }} width={730} height={100}>
+		<ResponsiveContainer width="90%" height={250} className = "responsiveContainer">
+	    <PieChart style = {{ paddingTop: 40 }} width={730} height={100}>
 	      <Pie style = {{ paddingTop: 80 }} data={dataSheet_gender} dataKey="probability" nameKey="name" 
 	           cx="50%" cy="50%" legendType='line' minAngle={5} 
 	           innerRadius={70} outerRadius={100} 
@@ -91,9 +74,11 @@ const ChartFace = ({num, age, gender, culture}) => {
 	      </Pie>
 	    <Legend verticalAlign="bottom" height={36}/>
 	    </PieChart>
+	    </ResponsiveContainer>
 		</div>
 
 		<div className = "chart-basic">
+		<ResponsiveContainer width="90%" height={250} className = "responsiveContainer">
 		<BarChart width={300} height={250} data={dataSheet_age} barSize={10}>
 		  <CartesianGrid strokeDasharray="3 3" />
 		  <XAxis dataKey="name" />
@@ -102,9 +87,10 @@ const ChartFace = ({num, age, gender, culture}) => {
 		  <Legend />
 		  <Bar dataKey="age" fill="#2979FF" />
 		</BarChart>
+		</ResponsiveContainer>
 		</div>
 
-		</div>
+		</section>
 		);
 }
 export default ChartFace;

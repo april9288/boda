@@ -1,0 +1,39 @@
+.responsiveContainer {
+	margin-top : 15%;
+}
+
+.sidebarIcons{
+	color:white;
+	font-size: 2rem;
+	margin: 0 1rem 0 0;
+	transition: all .2s ease-in-out;
+}
+
+.sidebarIcons:hover{
+	color:#f52549;
+	transform: scale(1.1);
+}
+
+
+.ColorSection{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/*side main menu */
+.firstMenu{
+	background-color: rgb(168, 84, 144)!important;
+}
+.secondMenu{
+	background-color: rgb(227, 104, 131)!important;
+}
+.thirdMenu{
+	background-color: rgb(255, 142, 111)!important;
+}
+.fourthMenu{
+	background-color: rgb(255, 193, 97)!important;
+}
+
+
