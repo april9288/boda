@@ -1,6 +1,6 @@
 .sampleContainer {
-    display: inline-block;
-    overflow: hidden;
+    display: grid;
+    overflow-y: hidden;
     text-align: left;
     border-bottom: 1px solid lightgray;
     height: fit-content;
@@ -16,6 +16,7 @@
     justify-content: flex-start;
     overflow-x: scroll;
     overflow-y: hidden;
+    padding-bottom: 1rem;
 }
 
 .sampleImgStyle {
@@ -34,7 +35,5 @@
   .sampleImgStyle {
     margin: 0.5rem;
   }
-  .sampleContainer {
-    margin-left: 10!important;
-  }
+
 }
