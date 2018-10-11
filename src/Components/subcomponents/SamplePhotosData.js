@@ -36,15 +36,15 @@ export const samplePhotoData = {
     "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9eb7a97f47b61a9f38ccc09c7f607d01&auto=format&fit=crop&w=160&q=80",
     "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=67fb2e7b1fbe39b18b51146234ef38aa&auto=format&fit=crop&w=160&q=80",
     "https://images.unsplash.com/photo-1506354666786-959d6d497f1a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=86c8c1fd5e9e5b384696472a095c42ac&auto=format&fit=crop&w=160&q=80",
-    "https://images.unsplash.com/photo-1453831362806-3d5577f014a4?ixlib=rb-0.3.5&s=4587c9bbef01f57cebad883418e30a63&auto=format&fit=crop&w=160&q=60",
-    "https://images.unsplash.com/photo-1481070414801-51fd732d7184?ixlib=rb-0.3.5&s=63f8ee9b6348934f60395a8c036bd1b9&auto=format&fit=crop&w=160&q=60",
+    "https://images.unsplash.com/photo-1534817557314-c781397d0b87?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0b38cb3e964237dcf8f290f197e8affa&auto=format&fit=crop&w=160&q=80",
+    "https://images.unsplash.com/photo-1532597311687-5c2dc87fff52?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5f766ceea9ba1bd2750910e70a94f91e&auto=format&fit=crop&w=160&q=80",
   ],
 
   foodSample325 : [
     "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9eb7a97f47b61a9f38ccc09c7f607d01&auto=format&fit=crop&w=325&q=80",
     "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=67fb2e7b1fbe39b18b51146234ef38aa&auto=format&fit=crop&w=325&q=80",
     "https://images.unsplash.com/photo-1506354666786-959d6d497f1a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=86c8c1fd5e9e5b384696472a095c42ac&auto=format&fit=crop&w=325&q=80",
-    "https://images.unsplash.com/photo-1453831362806-3d5577f014a4?ixlib=rb-0.3.5&s=4587c9bbef01f57cebad883418e30a63&auto=format&fit=crop&w=325&q=60",
-    "https://images.unsplash.com/photo-1481070414801-51fd732d7184?ixlib=rb-0.3.5&s=63f8ee9b6348934f60395a8c036bd1b9&auto=format&fit=crop&w=325&q=60",
+    "https://images.unsplash.com/photo-1534817557314-c781397d0b87?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0b38cb3e964237dcf8f290f197e8affa&auto=format&fit=crop&w=325&q=80",
+    "https://images.unsplash.com/photo-1532597311687-5c2dc87fff52?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5f766ceea9ba1bd2750910e70a94f91e&auto=format&fit=crop&w=325&q=80",
   ],
 }
