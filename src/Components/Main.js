@@ -142,10 +142,10 @@ class Main extends React.Component {
         </AppBar>
 
             <Switch>
-              <Route path='/' exact component={Dashboard}/>
-              <Route path='/Face' component={Face}/>
-              <Route path='/Color' component={Color}/>
-              <Route path='/Food' component={Food}/>
+              <Route path='/boda/' exact component={Dashboard}/>
+              <Route path='/boda/Face' component={Face}/>
+              <Route path='/boda/Color' component={Color}/>
+              <Route path='/boda/Food' component={Food}/>
               <Route component={NotFound}/>
             </Switch>
             
