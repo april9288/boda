@@ -1,4 +1,5 @@
 import React from 'react';
+import ChartFood from './ChartFood';
 import FoodSamples from './FoodSamples';
 import FoodResult from './FoodResult';
 import Progressbar from '../Progressbar';
@@ -72,18 +73,27 @@ const styles = theme => ({
   },
   content: {
     marginTop: "60px!important",
-    [theme.breakpoints.down('sm')]: {
-      marginTop: "56px!important",
-    },
     width:"100%",
     flexGrow: 1,
     padding: theme.spacing.unit * 3,
     paddingTop: 0,
     justifyContent: "center",
     display:"flex",
+    flexDirection: "column",
+    alignItems: "center",
     flexWrap: "wrap",
     overflowX: "hidden",
     overflowY: "auto",
+    [theme.breakpoints.down('sm')]: {
+      marginTop: "56px!important",
+      paddingLeft: 0,
+      paddingRight: 0,
+      alignItems: "inherit",
+    },
+  },
+  chartContent: {
+    justifyContent: "center",
+    display: "flex",
   },
   title: {
     color: "white",
@@ -252,10 +262,14 @@ render(){
                 (error || internalError)
                 ? <h1>Error! Check the format of the photo</h1>
                 : (searchField)
-                && <FoodResult img={searchField} food={foodResultsForCharts}/>
+                && <FoodResult img={searchField}/>
               }
-          
-
+              <div className={classes.chartContent}>
+              {
+                foodResultsForCharts
+                && <ChartFood food={foodResultsForCharts}/>
+              }
+              </div>
         </main>
 
     </div>

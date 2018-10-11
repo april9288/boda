@@ -45,11 +45,11 @@ const ChartFace = ({num, age, gender, culture}) => {
 	];
 
 	return (
-		<section style={{width: 325}}>
+		<section style={{margin: "2rem 0", width: 325, borderBottom:"2px solid lightgray"}}>
 
-		<h1 style={{textAlign: "center"}}># face {num+1}</h1>
+		<h1 style={{textAlign: "center", padding: 0, margin: 0}}># face {num+1}</h1>
 		<div className = "chart-basic">
-		<ResponsiveContainer width="90%" height={250} className = "responsiveContainer">
+		<ResponsiveContainer width="100%" height={250}>
 		<RadarChart outerRadius={90} width={730} height={250} data={dataSheet_culture}>
 	      <PolarGrid />
 	      <PolarAngleAxis dataKey="name" />
@@ -60,9 +60,9 @@ const ChartFace = ({num, age, gender, culture}) => {
 		</div>
 
 		<div id = "gender" className = "chart-basic">
-		<ResponsiveContainer width="90%" height={250} className = "responsiveContainer">
-	    <PieChart style = {{ paddingTop: 40 }} width={730} height={100}>
-	      <Pie style = {{ paddingTop: 80 }} data={dataSheet_gender} dataKey="probability" nameKey="name" 
+		<ResponsiveContainer width="100%" height={250}>
+	    <PieChart width={730} height={100}>
+	      <Pie data={dataSheet_gender} dataKey="probability" nameKey="name" 
 	           cx="50%" cy="50%" legendType='line' minAngle={5} 
 	           innerRadius={70} outerRadius={100} 
 	           fill="#8884d8" 
@@ -78,7 +78,7 @@ const ChartFace = ({num, age, gender, culture}) => {
 		</div>
 
 		<div className = "chart-basic">
-		<ResponsiveContainer width="90%" height={250} className = "responsiveContainer">
+		<ResponsiveContainer width="100%" height={250}>
 		<BarChart width={300} height={250} data={dataSheet_age} barSize={10}>
 		  <CartesianGrid strokeDasharray="3 3" />
 		  <XAxis dataKey="name" />

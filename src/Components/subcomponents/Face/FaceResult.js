@@ -1,27 +1,9 @@
 import React from 'react';
-import Paper from '@material-ui/core/Paper';
 
-const faceImageDiv = { 
-  padding: 20, 
-  marginTop: 10, 
-  marginBottom: 10,
-  width: "fit-content",
-  height: "fit-content"
-}
-
-const faceImageResultBigDiv = {
-  width: "100%",
-  display: "flex",
-  justifyContent: "center"
-
-}
-
-const FaceResult = ({ classes, img, face }) => {
+const FaceResult = ({ img, face }) => {
 
   if (img && face) {
     return (
-    <div style={faceImageResultBigDiv}>
-      <Paper style = {faceImageDiv} elevation={1}>
       <div className='bigger-box'>
         <img id = 'inputimage' alt='' src={img} width='325' height='auto'/>
               { 
@@ -35,9 +17,6 @@ const FaceResult = ({ classes, img, face }) => {
                   <p id="box_number">{i+1}</p></div>)
               }
       </div>
-      </Paper>
-    </div>
-
     );
   }
 }

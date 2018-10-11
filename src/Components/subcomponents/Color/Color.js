@@ -71,19 +71,23 @@ const styles = theme => ({
   },
   content: {
     marginTop: "60px!important",
-    [theme.breakpoints.down('sm')]: {
-      marginTop: "56px!important",
-    },
     width:"100%",
-    height:"100vh",
     flexGrow: 1,
     padding: theme.spacing.unit * 3,
     paddingTop: 0,
     justifyContent: "center",
     display:"flex",
+    flexDirection: "column",
+    alignItems: "center",
     flexWrap: "wrap",
     overflowX: "hidden",
     overflowY: "auto",
+    [theme.breakpoints.down('sm')]: {
+      marginTop: "56px!important",
+      paddingLeft: 0,
+      paddingRight: 0,
+      alignItems: "inherit",
+    },
   },
   title: {
     color: "white",
@@ -136,6 +140,9 @@ const styles = theme => ({
   },
   bigSearchDiv :{
     margin: theme.spacing.unit,
+  },
+  sampleContent:{
+
   }
 });
 
@@ -246,15 +253,14 @@ render(){
               }
 	        </AppBar>
 
-	      <main className={classes.content} id="colorBody">
+	      <main className={classes.content} >
 
-              <ColorSamples />
-
+              <ColorSamples className={classes.sampleContent} />
               {
                 (error || internalError)
                 ? <h1>Error! Check the format of the photo</h1>
                 : (searchField)
-                && <ColorResult img={searchField} color={detectedColor}/>
+                && <span style={{width: "100%", display:"flex", justifyContent:"center"}} id="colorBody"><ColorResult img={searchField} color={detectedColor}/></span>
 
               }
           

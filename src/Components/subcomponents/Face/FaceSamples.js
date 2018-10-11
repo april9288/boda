@@ -10,14 +10,12 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-
-
 const PhotoSamples = ({onrequestDetectionActionFromSample}) => {
 
   const sampleImgs = samplePhotoData.faceSample160.map((val,i) => <img key={val} className="sampleImgStyle" alt='' src={val} onClick={()=>onrequestDetectionActionFromSample("Face", samplePhotoData.faceSample325[i])}/>)
     return (
       <div className="sampleContainer">
-        <div><h3>Samples from <a href="https://unsplash.com" className="sampleTextStyle">unsplash.com</a></h3>
+        <div style={{paddingLeft: 15}}><h3>Samples from <a href="https://unsplash.com" className="sampleTextStyle">unsplash.com</a></h3>
         </div>
         <div className="sampleImgContainer">
         {

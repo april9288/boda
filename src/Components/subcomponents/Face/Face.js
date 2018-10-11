@@ -49,6 +49,7 @@ const styles = theme => ({
     width: '100%',
     background: "white",
     overflowY: "auto",
+    overflowX: "hidden"
   },
   appBar: {
     position: 'absolute',
@@ -72,24 +73,33 @@ const styles = theme => ({
   },
   content: {
     marginTop: "60px!important",
-    [theme.breakpoints.down('sm')]: {
-      marginTop: "56px!important",
-    },
     width:"100%",
     flexGrow: 1,
     padding: theme.spacing.unit * 3,
     paddingTop: 0,
     justifyContent: "center",
     display:"flex",
+    flexDirection: "column",
+    alignItems: "center",
     flexWrap: "wrap",
     overflowX: "hidden",
     overflowY: "auto",
+    [theme.breakpoints.down('sm')]: {
+      marginTop: "56px!important",
+      paddingLeft: 0,
+      paddingRight: 0,
+      alignItems: "inherit",
+    },
   },
   chartContent : {
     display: "flex",
     justifyContent: "center",
     flexWrap: "wrap",
-    flexDirection: "column"
+    flexDirection: "column",
+    alignItems: "center"
+  },
+  specialTrick : {
+    color: "black"
   },
   title: {
     color: "white",
@@ -268,18 +278,20 @@ render(){
         <main className={classes.content}>
 
               <FaceSamples />
-              {
-                (error || internalError)
-                ? <h1>Error! Check the format of the photo</h1>
-                : (searchField)
-                && <FaceResult img={searchField} face={faceResultsForCharts} />
-              }
-              <div className={classes.chartContent}>
-              {
-                faceResultsForCharts
-                && faceResultsForCharts.map((val,i) => <ChartFace key={val.topRow} num={i} age={val.age} gender={val.gender} culture={val.culture}/>)
-              }
-              </div>
+              <section className={classes.specialTrick}> 
+                {
+                  (error || internalError)
+                  ? <h1>Error! Check the format of the photo</h1>
+                  : (searchField)
+                  && <FaceResult img={searchField} face={faceResultsForCharts} />
+                }
+                <div className={classes.chartContent}>
+                {
+                  faceResultsForCharts
+                  && faceResultsForCharts.map((val,i) => <ChartFace key={val.topRow} num={i} age={val.age} gender={val.gender} culture={val.culture}/>)
+                }
+                </div>
+              </section>
         </main>
 
     </div>

@@ -34,4 +34,7 @@
   .sampleImgStyle {
     margin: 0.5rem;
   }
+  .sampleContainer {
+    margin-left: 10!important;
+  }
 }
