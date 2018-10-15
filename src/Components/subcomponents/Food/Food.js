@@ -17,12 +17,12 @@ import MenuIcon from '@material-ui/icons/Menu';
 import InputBase from '@material-ui/core/InputBase';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import SearchIcon from '@material-ui/icons/Search';
-
+import CancelIcon from '@material-ui/icons/Cancel';
 import MainMenuItems from '../../router/menuRouter';
 import {SubMenuItems} from '../../router/submenuRouter';
 
 import { connect } from 'react-redux';
-import { searchFieldAction, requestDetectionAction } from '../../redux/actions';
+import { searchFieldAction, requestDetectionAction, initiateStateAction } from '../../redux/actions';
 
 import Footer from '../Footer/Footer';
 
@@ -39,6 +39,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onsearchFieldAction: (event) => dispatch(searchFieldAction(event.target.value)),
     onrequestDetectionAction: (model, url) => dispatch(requestDetectionAction(model, url)),
+    oninitiateStateAction: () => dispatch(initiateStateAction())
   }
 }
 
@@ -106,6 +107,8 @@ const styles = theme => ({
     flexGrow: 1,
   },
   search: {
+    display: "flex",
+    alignItems: "center",
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.15),
@@ -165,7 +168,7 @@ class Food extends React.Component {
   }
 
 render(){
-  const { classes, onsearchFieldAction, searchField, detectionResults, isPending, error } = this.props;
+  const { classes, onsearchFieldAction, oninitiateStateAction, searchField, detectionResults, isPending, error } = this.props;
 
     let foodResultsForCharts = [];
     let internalError = false;
@@ -237,12 +240,14 @@ render(){
                 <InputBase
                   onChange={onsearchFieldAction}
                   onKeyPress={this.enter}
-                  placeholder={`insert food image url`}
+                  placeholder={`food image url`}
                   classes={{
                     root: classes.inputRoot,
                     input: classes.inputInput,
                   }}
+                  value={searchField}
                 />
+                  <IconButton onClick={oninitiateStateAction}><CancelIcon /></IconButton>
               </div>
 
             </section>
