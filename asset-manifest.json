@@ -1,13 +1,13 @@
 {
-  "main.css": "/boda/static/css/main.dc2d3b5c.chunk.css",
-  "main.js": "/boda/static/js/main.e47afb0b.chunk.js",
-  "main.js.map": "/boda/static/js/main.e47afb0b.chunk.js.map",
-  "static/js/1.a23fe6a9.chunk.js": "/boda/static/js/1.a23fe6a9.chunk.js",
-  "static/js/1.a23fe6a9.chunk.js.map": "/boda/static/js/1.a23fe6a9.chunk.js.map",
+  "main.css": "/boda/static/css/main.16cf7abc.chunk.css",
+  "main.js": "/boda/static/js/main.55f4fb75.chunk.js",
+  "main.js.map": "/boda/static/js/main.55f4fb75.chunk.js.map",
+  "static/js/1.1fd164c4.chunk.js": "/boda/static/js/1.1fd164c4.chunk.js",
+  "static/js/1.1fd164c4.chunk.js.map": "/boda/static/js/1.1fd164c4.chunk.js.map",
   "runtime~main.js": "/boda/static/js/runtime~main.d02ff49e.js",
   "runtime~main.js.map": "/boda/static/js/runtime~main.d02ff49e.js.map",
-  "static/css/main.dc2d3b5c.chunk.css.map": "/boda/static/css/main.dc2d3b5c.chunk.css.map",
+  "static/css/main.16cf7abc.chunk.css.map": "/boda/static/css/main.16cf7abc.chunk.css.map",
   "index.html": "/boda/index.html",
-  "precache-manifest.bca243bd6ac0133cf880e64a42f58071.js": "/boda/precache-manifest.bca243bd6ac0133cf880e64a42f58071.js",
+  "precache-manifest.bcbdc3f36f2750c3fa86b0fe663c23d5.js": "/boda/precache-manifest.bcbdc3f36f2750c3fa86b0fe663c23d5.js",
   "service-worker.js": "/boda/service-worker.js"
 }
