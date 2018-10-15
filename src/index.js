@@ -26,7 +26,7 @@ const theme = createMuiTheme({
 
 const logger = createLogger();
 let middleware = [thunkMiddleware];
-if (process.env.Environment !== "production") { 
+if (process.env.NODE_ENV === 'development') { 
   middleware.push(logger)
 };
 
