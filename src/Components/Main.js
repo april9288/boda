@@ -3,15 +3,9 @@ import './Main.css';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
 import Hidden from '@material-ui/core/Hidden';
 import Divider from '@material-ui/core/Divider';
-import MenuIcon from '@material-ui/icons/Menu';
-
 import MainMenuItems from './router/menuRouter';
 import {SubMenuItems} from './router/submenuRouter';
 
@@ -21,7 +15,8 @@ import Face from './subcomponents/Face/Face';
 import Color from './subcomponents/Color/Color';
 import Food from './subcomponents/Food/Food';
 import NotFound from './subcomponents/NotFound';
-import Footer from './subcomponents/Footer';
+
+//import Footer from './subcomponents/Footer/Footer';
 
 const drawerWidth = 240;
 
@@ -77,7 +72,6 @@ class Main extends React.Component {
 
   render() {
     const { classes } = this.props;
-
     const drawer = (
       <div>
         <div className={classes.toolbar} />
@@ -89,7 +83,6 @@ class Main extends React.Component {
     );
 
     return (
-    <div>
       <BrowserRouter>
       <div className={classes.root}>
 
@@ -122,25 +115,6 @@ class Main extends React.Component {
           </Drawer>
         </Hidden>
 
-
-
-        <AppBar className={classes.appBar}>
-          <Toolbar>
-          
-            <IconButton
-              color="inherit"
-              aria-label="Open drawer"
-              onClick={this.handleDrawerToggle}
-              className={classes.navIconHide}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" color="inherit" noWrap className={classes.title}>
-              404 - Wrong!
-            </Typography>
-          </Toolbar>
-        </AppBar>
-
             <Switch>
               <Route path='/boda/' exact component={Dashboard}/>
               <Route path='/boda/Face' component={Face}/>
@@ -149,10 +123,9 @@ class Main extends React.Component {
               <Route component={NotFound}/>
             </Switch>
             
+            
       </div>
       </BrowserRouter>
-      <Footer />
-    </div>
     );
   }
 }

@@ -22,6 +22,8 @@ import {SubMenuItems} from '../../router/submenuRouter';
 import { connect } from 'react-redux';
 import { searchFieldAction, requestDetectionAction } from '../../redux/actions';
 
+import Footer from '../Footer/Footer';
+
 const mapStateToProps = (state) => {
   return {
     searchField: state.searchFieldReducer.searchField,
@@ -72,10 +74,10 @@ const styles = theme => ({
   content: {
     marginTop: "60px!important",
     width:"100%",
+    minHeight: "110vh",
     flexGrow: 1,
-    padding: theme.spacing.unit * 3,
     paddingTop: 0,
-    justifyContent: "center",
+    justifyContent: "space-between",
     display:"flex",
     flexDirection: "column",
     alignItems: "center",
@@ -84,8 +86,6 @@ const styles = theme => ({
     overflowY: "auto",
     [theme.breakpoints.down('sm')]: {
       marginTop: "56px!important",
-      paddingLeft: 0,
-      paddingRight: 0,
       alignItems: "inherit",
     },
   },
@@ -110,7 +110,6 @@ const styles = theme => ({
     marginLeft: 0,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing.unit * 3,
       width: 'auto',
     },
   },
@@ -138,12 +137,10 @@ const styles = theme => ({
       width: 400,
     },
   },
-  bigSearchDiv :{
-    margin: theme.spacing.unit,
-  },
-  sampleContent:{
-
-  }
+  // sampleContent:{
+  //   minHeight: "80vh",
+  //   width:"100%"
+  // }
 });
 
 class Color extends React.Component {
@@ -264,6 +261,7 @@ render(){
 
               }
           
+              <Footer />
 
         </main>
 

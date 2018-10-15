@@ -1,13 +1,13 @@
 import React from 'react';
 
-const foodImgDiv = {
+const colorImgDiv = {
   marginTop: "2rem"
 }
 
 const ColorResult = ({ img, color }) => {
   return (
 
-    <div style={foodImgDiv}>
+    <div style={colorImgDiv}>
         <img alt='color' src={img} width='325' height='auto'/>
     {
       (color.length >= 1)

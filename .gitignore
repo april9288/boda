@@ -3,9 +3,7 @@
 # dependencies
 /node_modules
 /.env
-/src/Mtemp
-/src/temp
-
+/src/templates
 
 # testing
 /coverage

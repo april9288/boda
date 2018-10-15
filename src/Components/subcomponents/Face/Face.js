@@ -24,6 +24,8 @@ import {SubMenuItems} from '../../router/submenuRouter';
 import { connect } from 'react-redux';
 import { searchFieldAction, requestDetectionAction } from '../../redux/actions';
 
+import Footer from '../Footer/Footer';
+
 const mapStateToProps = (state) => {
   return {
     searchField: state.searchFieldReducer.searchField,
@@ -75,7 +77,6 @@ const styles = theme => ({
     marginTop: "60px!important",
     width:"100%",
     flexGrow: 1,
-    padding: theme.spacing.unit * 3,
     paddingTop: 0,
     justifyContent: "center",
     display:"flex",
@@ -86,8 +87,6 @@ const styles = theme => ({
     overflowY: "auto",
     [theme.breakpoints.down('sm')]: {
       marginTop: "56px!important",
-      paddingLeft: 0,
-      paddingRight: 0,
       alignItems: "inherit",
     },
   },
@@ -96,10 +95,13 @@ const styles = theme => ({
     justifyContent: "center",
     flexWrap: "wrap",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
+    width:"100%"
   },
   specialTrick : {
-    color: "black"
+    color: "black",
+    minHeight: "80vh",
+    width:"100%"
   },
   title: {
     color: "white",
@@ -292,6 +294,8 @@ render(){
                 }
                 </div>
               </section>
+
+              <Footer />
         </main>
 
     </div>

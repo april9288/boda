@@ -24,6 +24,8 @@ import {SubMenuItems} from '../../router/submenuRouter';
 import { connect } from 'react-redux';
 import { searchFieldAction, requestDetectionAction } from '../../redux/actions';
 
+import Footer from '../Footer/Footer';
+
 const mapStateToProps = (state) => {
   return {
     searchField: state.searchFieldReducer.searchField,
@@ -75,9 +77,9 @@ const styles = theme => ({
     marginTop: "60px!important",
     width:"100%",
     flexGrow: 1,
-    padding: theme.spacing.unit * 3,
     paddingTop: 0,
-    justifyContent: "center",
+    minHeight: "110vh",
+    justifyContent: "space-between",
     display:"flex",
     flexDirection: "column",
     alignItems: "center",
@@ -86,8 +88,6 @@ const styles = theme => ({
     overflowY: "auto",
     [theme.breakpoints.down('sm')]: {
       marginTop: "56px!important",
-      paddingLeft: 0,
-      paddingRight: 0,
       alignItems: "inherit",
     },
   },
@@ -270,6 +270,8 @@ render(){
                 && <ChartFood food={foodResultsForCharts}/>
               }
               </div>
+
+              <Footer/>
         </main>
 
     </div>

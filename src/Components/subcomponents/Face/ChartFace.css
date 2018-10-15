@@ -1,15 +1,21 @@
-.chart-basic {
-/*	padding-top: 20px;
-	padding-bottom: 20px;
-	margin-top: 10px;
-	margin-bottom: 10px;*/
-	display: flex;
-	justify-content: center;
-	max-width:750px;
+.chartFace_Section {
+	margin: 2rem 0;
+	border-bottom:2px solid lightgray;
+	min-width: 325px;
 }
 
+.chartFace_H1 {
+	text-align: "center";
+	padding: 0;
+	margin: 0;
+}
+
+.chart-basic {
+	display: flex;
+	justify-content: center;
+}
 
 #gender div:first-child > svg.recharts-surface:first-child {
 	padding-top: 50px !important;
-/*	margin-top: -80px !important;*/
 }
+

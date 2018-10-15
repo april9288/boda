@@ -15,12 +15,17 @@ import MenuIcon from '@material-ui/icons/Menu';
 import MainMenuItems from '../../router/menuRouter';
 import {SubMenuItems} from '../../router/submenuRouter';
 
+import Footer from '../Footer/Footer';
+
 const drawerWidth = 240;
 const styles = theme => ({
   root: {
     height: "100vh",
     display: 'flex',
     width: '100%',
+    flexDirection: "column",
+    overflowY: "auto",
+    overflowX: "hidden"
   },
   appBar: {
     position: 'absolute',
@@ -42,6 +47,9 @@ const styles = theme => ({
       position: 'relative',
     },
   },
+  BigContent:{
+    position:'relative' 
+  },
   content: {
     overflowY: "scroll",
     overflowX: "hidden",
@@ -52,7 +60,6 @@ const styles = theme => ({
     width:"100%",
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
-    padding: theme.spacing.unit * 3,
     display: "grid",
     justifyContent: "center",
   },
@@ -119,9 +126,12 @@ render(){
 	          </Toolbar>
 	        </AppBar>
 
+          <section className={classes.BigContent}>
     	    <main className={classes.content}>
             <DashboardResult />
           </main>
+          </section>
+          <Footer />
 
 		</div>
 	);

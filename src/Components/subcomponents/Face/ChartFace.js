@@ -45,50 +45,50 @@ const ChartFace = ({num, age, gender, culture}) => {
 	];
 
 	return (
-		<section style={{margin: "2rem 0", width: 325, borderBottom:"2px solid lightgray"}}>
+		<section className="chartFace_Section">
 
-		<h1 style={{textAlign: "center", padding: 0, margin: 0}}># face {num+1}</h1>
-		<div className = "chart-basic">
-		<ResponsiveContainer width="100%" height={250}>
-		<RadarChart outerRadius={90} width={730} height={250} data={dataSheet_culture}>
-	      <PolarGrid />
-	      <PolarAngleAxis dataKey="name" />
-	      <PolarRadiusAxis angle={30}/>
-	      <Radar name="Ethnicity" dataKey="probability" stroke="#2979FF" fill="#2979FF" fillOpacity={0.6} />
-	    </RadarChart>
-	    </ResponsiveContainer>
-		</div>
+			<h1 className="chartFace_H1"># face {num+1}</h1>
+				<div className = "chart-basic">
+					<ResponsiveContainer width="100%" height={250}>
+					<RadarChart outerRadius={90} width={730} height={250} data={dataSheet_culture}>
+				      <PolarGrid />
+				      <PolarAngleAxis dataKey="name" />
+				      <PolarRadiusAxis angle={30}/>
+				      <Radar name="Ethnicity" dataKey="probability" stroke="#2979FF" fill="#2979FF" fillOpacity={0.6} />
+				    </RadarChart>
+				    </ResponsiveContainer>
+				</div>
 
-		<div id = "gender" className = "chart-basic">
-		<ResponsiveContainer width="100%" height={250}>
-	    <PieChart width={730} height={100}>
-	      <Pie data={dataSheet_gender} dataKey="probability" nameKey="name" 
-	           cx="50%" cy="50%" legendType='line' minAngle={5} 
-	           innerRadius={70} outerRadius={100} 
-	           fill="#8884d8" 
-	           startAngle={180} endAngle={0} label
-	           paddingAngle={5}>
-	          {
-	            dataSheet_gender.map((entry, i) => <Cell key={i} fill={COLORS[i % COLORS.length]}/>)
-	          }
-	      </Pie>
-	    <Legend verticalAlign="bottom" height={36}/>
-	    </PieChart>
-	    </ResponsiveContainer>
-		</div>
+				<div id = "gender" className = "chart-basic">
+					<ResponsiveContainer width="100%" height={250}>
+				    <PieChart width={730} height={100}>
+				      <Pie data={dataSheet_gender} dataKey="probability" nameKey="name" 
+				           cx="50%" cy="50%" legendType='line' minAngle={5} 
+				           innerRadius={70} outerRadius={100} 
+				           fill="#8884d8" 
+				           startAngle={180} endAngle={0} label
+				           paddingAngle={5}>
+				          {
+				            dataSheet_gender.map((entry, i) => <Cell key={i} fill={COLORS[i % COLORS.length]}/>)
+				          }
+				      </Pie>
+				    <Legend verticalAlign="bottom" height={36}/>
+				    </PieChart>
+				    </ResponsiveContainer>
+				</div>
 
-		<div className = "chart-basic">
-		<ResponsiveContainer width="100%" height={250}>
-		<BarChart width={300} height={250} data={dataSheet_age} barSize={10}>
-		  <CartesianGrid strokeDasharray="3 3" />
-		  <XAxis dataKey="name" />
-		  <YAxis />
-		  <Tooltip />
-		  <Legend />
-		  <Bar dataKey="age" fill="#2979FF" />
-		</BarChart>
-		</ResponsiveContainer>
-		</div>
+				<div className = "chart-basic">
+					<ResponsiveContainer width="100%" height={250}>
+					<BarChart width={300} height={250} data={dataSheet_age} barSize={10}>
+					  <CartesianGrid strokeDasharray="3 3" />
+					  <XAxis dataKey="name" />
+					  <YAxis />
+					  <Tooltip />
+					  <Legend />
+					  <Bar dataKey="age" fill="#2979FF" />
+					</BarChart>
+					</ResponsiveContainer>
+				</div>
 
 		</section>
 		);

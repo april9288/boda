@@ -5,9 +5,9 @@ It's an object recognition web app. Currently only face, color and food can be d
 
 ## Built With
 
-* [react](https://reactjs.org/) - The official React.js website
-* [redux](https://redux.js.org/) - It's a Javascript library helps manage React state
-* [react-router-dom v4](https://reacttraining.com/react-router/) - Routing solution for React.js
+* [React.js](https://reactjs.org/) - The official React.js website
+* [Redux.js](https://redux.js.org/) - It's a Javascript library helps manage React state
+* [React Router](https://reacttraining.com/react-router/) - Routing solution for React.js
 * [Clarifai Object Recognition API](https://clarifai.com/) - It's Clarifai's website
 
 ## Meta

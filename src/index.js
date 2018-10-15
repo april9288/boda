@@ -3,24 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Main from './components/Main';
 import registerServiceWorker from './registerServiceWorker';
-
-import { searchFieldReducer, requestDetectionReducer } from './components/redux/reducers';
-import { createLogger } from 'redux-logger';
-
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
-
-
+import { createLogger } from 'redux-logger';
+import { searchFieldReducer, requestDetectionReducer } from './components/redux/reducers';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-
-//color palette
-//rgb(94,73,138)
-//rgb(168, 84, 144)
-//rgb(227, 104, 131)
-//rgb(255, 142, 111)
-//rgb(255, 193, 97)
-//rgb(249, 248, 113)
 
 const theme = createMuiTheme({
    palette: {
@@ -37,8 +25,13 @@ const theme = createMuiTheme({
 });
 
 const logger = createLogger();
-const rootReducers = combineReducers({searchFieldReducer, requestDetectionReducer})
-const store = createStore(rootReducers, applyMiddleware(thunkMiddleware, logger))
+let middleware = [thunkMiddleware];
+if (process.env.Environment !== "production") { 
+  middleware.push(logger)
+};
+
+const rootReducers = combineReducers({searchFieldReducer, requestDetectionReducer});
+const store = createStore(rootReducers, applyMiddleware(...middleware));
 
 ReactDOM.render(
 <MuiThemeProvider theme={theme}>
