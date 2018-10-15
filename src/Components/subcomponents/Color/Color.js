@@ -74,7 +74,7 @@ const styles = theme => ({
   content: {
     marginTop: "60px!important",
     width:"100%",
-    minHeight: "110vh",
+    minHeight: "120vh",
     flexGrow: 1,
     paddingTop: 0,
     justifyContent: "space-between",

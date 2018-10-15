@@ -78,7 +78,7 @@ const styles = theme => ({
     width:"100%",
     flexGrow: 1,
     paddingTop: 0,
-    minHeight: "110vh",
+    minHeight: "120vh",
     justifyContent: "space-between",
     display:"flex",
     flexDirection: "column",

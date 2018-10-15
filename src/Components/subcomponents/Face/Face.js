@@ -78,7 +78,8 @@ const styles = theme => ({
     width:"100%",
     flexGrow: 1,
     paddingTop: 0,
-    justifyContent: "center",
+    minHeight: "120vh",
+    justifyContent: "space-between",
     display:"flex",
     flexDirection: "column",
     alignItems: "center",
@@ -100,7 +101,7 @@ const styles = theme => ({
   },
   specialTrick : {
     color: "black",
-    minHeight: "80vh",
+    // minHeight: "80vh",
     width:"100%"
   },
   title: {
