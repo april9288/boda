@@ -1,4 +1,4 @@
-# boda : [viewing or watching] in Korean
+# boda
 > Object Recognition Web App
 
 ![](sample.png)
